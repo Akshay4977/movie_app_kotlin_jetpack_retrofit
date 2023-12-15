@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.tvshowsappassessment.ui.details.DetailsScreens
 import com.example.tvshowsappassessment.ui.home.HomeScreen
+import com.example.tvshowsappassessment.ui.login.LoginScreen
 import com.example.tvshowsappassessment.ui.navigation.Routes
 
 
@@ -17,10 +18,10 @@ fun ShowsNavigation() {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = Routes.HOME.name) {
+    NavHost(navController = navController, startDestination = Routes.LOGIN.name) {
 
-        composable(route = Routes.HOME.name) {
-            HomeScreen(navController)
+        composable(route = Routes.LOGIN.name) {
+            LoginScreen()
         }
         composable(route = Routes.DETAILS.name) {
             DetailsScreens ({ navController.navigate(Routes.HOME.name) })
